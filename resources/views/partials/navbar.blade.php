@@ -7,13 +7,13 @@
     <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link">Home</a>
+          <a class="nav-link active" href="/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link">Lihat Tiket</a>
+          <a class="nav-link" href="/viewticket">Lihat Tiket</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link ">Tentang Kami</a>
+          <a class="nav-link" href="/aboutus">Tentang Kami</a>
         </li>
       </ul>
 
