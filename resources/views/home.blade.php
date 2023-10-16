@@ -1,56 +1,61 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+@extends('layouts.main')
+@section('container')
   
-  <title>Document</title>
-</head>
-<body>
-  @extends('layouts.main')
-
-  @section('container')
-    <h1>Halaman Home</h1> 
+  <div class="container-fluid" style="padding: 0">
+    <img src="img/viewpantai.jpg" class="img-fluid" style="width: 1440px; height: 20%;" alt="...">   
+  </div>
   
-    <div id="carouselExampleCaptions" class="carousel slide">
-      <div class="carousel-indicators">
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
-        <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
-      </div>
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img src="..." class="d-block w-100" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h5>First slide label</h5>
-            <p>Some representative placeholder content for the first slide.</p>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="" class="d-block w-100" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h5>Second slide label</h5>
-            <p>Some representative placeholder content for the second slide.</p>
-          </div>
-        </div>
-        <div class="carousel-item">
-          <img src="..." class="d-block w-100" alt="...">
-          <div class="carousel-caption d-none d-md-block">
-            <h5>Third slide label</h5>
-            <p>Some representative placeholder content for the third slide.</p>
+  <section class="search-tiket">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-5 info-panel">
+          <label for="tanggal" class="form-label col-form-label-sm mx-4"><h5>Pilih tanggal kunjungan</h5></label>
+          <div class="col-lg-10">
+            <div class="d-flex">
+              <input type="date" class="form-control form-control-sm mx-4" id="tanggal" required />
+              <a class="btn btn-primary" href="/viewtiket" role="button">Pesan</a>
+            </div>
           </div>
         </div>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
     </div>
-  @endsection
-</body>
-</html>
+  </section>
+
+    <section id="about" class="about">
+      <div class="container text-center mt-5">
+        <div class="row justify-content-center about-us">
+          <div class="col-md-7 text-center mt-5 mb-5">
+            <h3>Tentang <span>Kami</span></h3>
+            <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe sunt ipsam ducimus illum quisquam quas, quibusdam possimus voluptas perspiciatis id dolores quae et dolore ut animi at officiis natus aliquid.
+            </p>
+          </div>
+
+          <h4>Keindahan Wisata <span>Pangandaran</span></h4>
+          <div class="card-group">
+            <div class="card">
+              <div class="card-body">
+                <img src="img/marlin.png" class="card-img-top">
+                <h5 class="card-title">Pangandaran</h5>
+                <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam, vel.</p>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-body">
+                <img src="img/marlin.png" class="card-img-top">
+                <h5 class="card-title">Pangandaran</h5>
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, perferendis.</p>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-body">
+                <img src="img/marlin.png" class="card-img-top">
+                <h5 class="card-title">Pangandaran</h5>
+                <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, suscipit.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+@endsection
