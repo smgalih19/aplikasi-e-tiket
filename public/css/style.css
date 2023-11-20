@@ -96,6 +96,10 @@
 .klik-cursor {
     cursor: pointer;
 }
+.center{
+    width: 150px;
+    margin: 40px auto;
+    }
 
 @media screen and (max-width: 680px) {
     .search-tiket .info-panel {
