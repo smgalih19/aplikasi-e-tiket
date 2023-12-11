@@ -14,6 +14,7 @@
     align-items: center;
 }
 
+/* Awal About Us */
 .about-us h3 {
     font-size: 40px;
     font-weight: 200;
@@ -37,7 +38,9 @@
     color: #176b87;
     text-shadow: 2px 2px #000;
 }
+/* Akhir About Us */
 
+/* Awal Card Body Info Wisata */
 .card {
     border: #000;
 }
@@ -50,7 +53,9 @@
 .card-body img {
     width: 50%;
 }
+/* Akhir Card Body Info Wisata */
 
+/* Awal Footer */
 .footer {
     margin-top: 100px;
     color: white;
@@ -74,7 +79,9 @@
     border-radius: 5px;
     width: 5%;
 }
+/* Akhir Footer */
 
+/* Awal Tiket Pilihan */
 .tiket {
     border-radius: 15px;
     background-color: #bacddb;
@@ -100,6 +107,43 @@
     width: 150px;
     margin: 40px auto;
     }
+/* Akhir Tiket Pilihan */
+
+/* Awal Login */
+.form-signin{
+    width: 100%;
+    max-width: 330px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.form-signin .form-floating:focus-within {
+    z-index: 2;
+}
+
+.form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+}
+/* Akhir Login */
+
+/* Awal Registrasi */
+.form-registration{
+    margin-top: 100px;
+}
+
+.form-registration input {
+    border-radius: 0;
+    margin-bottom: -1px;
+}
+/* Akhir Registrasi */
 
 @media screen and (max-width: 680px) {
     .search-tiket .info-panel {
