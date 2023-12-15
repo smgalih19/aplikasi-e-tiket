@@ -7,16 +7,9 @@
     <section class="search-tiket">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-5 info-panel">
-                    <label for="tanggal" class="form-label col-form-label-sm mx-4">
-                        <h5>Pilih tanggal kunjungan</h5>
-                    </label>
-                    <div class="col-lg-10">
-                        <div class="d-flex">
-                            <input type="date" class="form-control form-control-sm mx-4" id="tanggal" required />
-                            <a class="btn btn-primary" href="/viewtiket" role="button">Pesan</a>
-                        </div>
-                    </div>
+                <div class="info-panel col-5">
+                    <h5>Beli Tiket Sekarang Juga</h5>
+                    <a class="btn btn-primary" href="/viewtiket" role="button">Pilih Tiket</a>
                 </div>
             </div>
         </div>
@@ -38,14 +31,14 @@
                     <div class="card">
                         <div class="card-body">
                             <img src="img/marlin.png" class="card-img-top">
-                            <h5 class="card-title">Pangandaran</h5>
+                            <h5 class="card-title">Pantai Barat Pangandaran</h5>
                             <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam, vel.</p>
                         </div>
                     </div>
                     <div class="card">
                         <div class="card-body">
                             <img src="img/marlin.png" class="card-img-top">
-                            <h5 class="card-title">Pangandaran</h5>
+                            <h5 class="card-title">Cagar Alam Pangandaran</h5>
                             <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, perferendis.
                             </p>
                         </div>
@@ -53,7 +46,7 @@
                     <div class="card">
                         <div class="card-body">
                             <img src="img/marlin.png" class="card-img-top">
-                            <h5 class="card-title">Pangandaran</h5>
+                            <h5 class="card-title">Pantai Timur Pangandaran</h5>
                             <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, suscipit.
                             </p>
                         </div>

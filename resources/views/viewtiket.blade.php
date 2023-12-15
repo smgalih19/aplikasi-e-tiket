@@ -5,6 +5,7 @@
             <div class="row justify-content-around">
                 <div class="tiket col mt-5 mx-4">
                     <h5 class="tiket-pilih">Pilih tiket dibawah ini</h5>
+                    <hr>
                     <div class="macam-tiket">
 
                         <p>Tiket Sepeda Motor</p>
@@ -48,11 +49,7 @@
 
                 {{-- Awal Bagian Tiket Terpilih --}}
                 <div class="tiket col mt-5 mx-4">
-                    <h5 class="tiket-pilih">Tiket yang dipilih</h5>
-                    <div class="edit-tiket">
-                        <p>Tiket Jeep / Sedan dan sejenisnya</p>
-                    </div>
-                    <h3 class="text-danger">IDR 60.000</h3>
+                    <h5 class="tiket-pilih">Isi data dibawah ini</h5>
                     <hr>
 
                     <form>
@@ -94,23 +91,6 @@
                             </div>
                             </div>
                         </fieldset>
-                        <div class="row mb-3">
-                            <label for="inputEmail3" class="col-sm-2">Pilih Pembayaran</label>
-                            <div class="col-sm-10">
-                                <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                                <label class="form-check-label" for="flexCheckDefault">
-                                    BCA
-                                </label>
-                                </div>
-                                <div class="form-check">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
-                                <label class="form-check-label" for="flexCheckChecked">
-                                    BRI
-                                </label>
-                                </div>
-                            </div>
-                        </div>
                         <button type="submit" class="btn btn-primary">Lanjutkan Pembayaran</button>
                     </form>
 
