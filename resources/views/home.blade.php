@@ -1,32 +1,27 @@
 @extends('layouts.main')
 @section('container')
     <div class="container-fluid" style="padding: 0">
-        <img src="img/viewpantai.jpg" class="img-fluid" style="width: 1440px; height: 20%;" alt="...">
+        <img src="img/viewpantai.jpg" class="img-fluid" style="width: 1440px; height: 20%;">
     </div>
 
-    <section class="search-tiket">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="info-panel col-5">
-                    <h5>Beli Tiket Sekarang Juga</h5>
-                    <a class="btn btn-primary" href="/viewtiket" role="button">Pilih Tiket</a>
+                <div class="info-panel col-5 justify-content-center">
+                    <h5 class="text-center">Beli Tiket Sekarang Juga</h5>
+                    <div class="w-full d-flex justify-center">
+                        <a class="btn btn-home mx-auto" href="/viewtiket" role="button">
+                            Pilih Tiket
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
 
     <section id="about" class="about">
         <div class="container text-center mt-5">
             <div class="row justify-content-center about-us">
-                <div class="col-md-7 text-center mt-5 mb-5">
-                    <h3>Tentang <span>Kami</span></h3>
-                    <p> Lorem ipsum dolor sit amet consectetur, adipisicing elit. Saepe sunt ipsam ducimus illum quisquam
-                        quas, quibusdam possimus voluptas perspiciatis id dolores quae et dolore ut animi at officiis natus
-                        aliquid.
-                    </p>
-                </div>
 
-                <h4>Keindahan Wisata <span>Pangandaran</span></h4>
+                <h4>Informasi Terkait Wisata di <span>Pangandaran</span></h4>
                 <div class="card-group">
                     <div class="card">
                         <div class="card-body">

@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-white fixed-top">
+<nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
     <div class="container">
         <a class="navbar-brand text-dark fw-bold" href="/">e-Ticket</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -22,12 +22,11 @@
                 @auth
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle text-black" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Welcome, {{ auth()->user()->name }}
+                        Hallo, {{ auth()->user()->name }}
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="/dashboard">My Dashboard</a></li>
+                        <li><a class="dropdown-item" href="/dashboard"><i class="bi bi-justify-left"></i> Dashboard</a></li>
                         <li><hr class="dropdown-divider"></li>
-                        <li>
                             <form action="/logout" method="post">
                                 @csrf
                                 <button type="submit" class="dropdown-item"><i class="bi bi-box-arrow-right">

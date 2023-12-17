@@ -1,0 +1,37 @@
+.bi {
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+}
+
+.sidebar{
+  background-color: black;
+}
+/*
+ * Sidebar
+ */
+
+@media (min-width: 768px) {
+  .navbar-search {
+    display: block;
+  }
+}
+
+.sidebar .nav-link {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.sidebar .nav-link.active {
+  color: black;
+}
+
+/*
+ * Navbar
+ */
+
+.navbar-brand {
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-weight: 500;
+}

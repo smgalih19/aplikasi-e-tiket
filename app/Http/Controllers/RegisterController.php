@@ -17,13 +17,13 @@ class RegisterController extends Controller
         ]);
     }
 
-    public function tiket(Request $request)
+    public function store(Request $request)
     {
         $validatedData = $request->validate([
             'name' => 'required|max:255',
-            'email' => 'required|email:dns',
+            'email' => 'required|unique:users',
             'password' => 'required|min:5|max:255',
-            'phone_number' => 'required|min:10',
+            'phone_number' => 'required|min:10|unique:users',
             'gender' => 'required|in:male,female'
         ]);
 
