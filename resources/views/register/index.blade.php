@@ -89,7 +89,7 @@
           </div>
 
           <div class="text-center text-lg-start mt-3">
-            <button class="btn btn-lg btn-primary mt-3" type="submit">Register</button>
+            <button class="btn btn-login btn-lg btn-primary mt-3" type="submit">Register</button>
           </div>
         </form>
 
