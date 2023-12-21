@@ -1,10 +1,10 @@
 <?php
 
-use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
-use SebastianBergmann\CodeCoverage\Report\Html\Dashboard;
+use App\Http\Controllers\DashboardTiketController;
+use App\Http\Controllers\DashboardUserTiketController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,3 +39,12 @@ Route::post('/register', [RegisterController::class, 'store']);
 Route::get('/dashboard', function(){
     return view('dashboard.index');
 })->middleware('auth');
+
+Route::resource('/dashboard/history', DashboardTiketController::class)->middleware('auth');
+Route::get('/dashboard/data-ticket', [DashboardTiketController::class, 'ticket'])->middleware('auth');
+
+Route::get('/dashboard-user', function(){
+    return view('dashboard-user.index');
+})->middleware('auth');
+
+Route::resource('/dashboard-user/index' , DashboardUserTiketController::class);

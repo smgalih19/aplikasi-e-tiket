@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css">
     
     <title>e-Ticket Pangandaran</title>
+    <link rel="icon" type="image/x-icon" href="/img/ombak.png">
 </head>
 
 <body>

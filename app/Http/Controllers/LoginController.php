@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller;
 use Illuminate\Support\Facades\Auth;
@@ -23,8 +24,14 @@ class LoginController extends Controller
         ]);
 
         if(Auth::attempt($credentials)){
-            $request->session()->regenerate();
-            return redirect()->intended('/dashboard');
+            $user = User::where('email', $request->email)->first();
+            if($user->is_admin){
+                $request->session()->regenerate();
+                return redirect()->intended('/dashboard');
+            }else {
+                $request->session()->regenerate();
+                return redirect()->intended('/dashboard-user');
+            }
         }
 
         return back()->with('loginError','Login failed!');

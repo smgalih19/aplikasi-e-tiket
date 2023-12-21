@@ -25,7 +25,7 @@
                         Hallo, {{ auth()->user()->name }}
                     </a>
                     <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="/dashboard"><i class="bi bi-justify-left"></i> Dashboard</a></li>
+                        <li><a class="dropdown-item" href="{{ auth()->user()->is_admin ? '/dashboard' : '/dashboard-user' }}"><i class="bi bi-justify-left"></i> Dashboard</a></li>
                         <li><hr class="dropdown-divider"></li>
                             <form action="/logout" method="post">
                                 @csrf

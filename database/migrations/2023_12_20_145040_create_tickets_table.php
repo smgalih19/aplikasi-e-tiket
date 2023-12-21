@@ -11,10 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::table('users', function (Blueprint $table) {
-            $table->enum('gender' ,['male', 'female']);
-            $table->string('phone_number');
-            $table->boolean('is_admin')->default(false);
+        Schema::create('tickets', function (Blueprint $table) {
+            $table->id();
+            $table->string('name');
+            $table->bigInteger('price');
+            $table->string('description')->nullable();
+            $table->timestamps();
         });
     }
 
@@ -23,6 +25,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        
+        Schema::dropIfExists('tickets');
     }
 };
