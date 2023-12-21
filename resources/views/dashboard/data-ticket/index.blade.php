@@ -3,14 +3,10 @@
 @section('container')
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
   <h5>Data Ticket</h5>
-  <div class="btn-toolbar mb-2 mb-md-0">
-    <div class="btn-group me-2">
-      <button type="button" class="btn btn-sm btn-outline-secondary"><i class="bi bi-download"></i> Download</button>
-    </div>
-  </div>
 </div>
 
 <div class="table-responsive small">
+  <a href="/dashboard/data-ticket/create" class="btn btn-primary mb-3">Create Ticket</a>
   <table class="table table-striped">
     <thead>
       <tr>
@@ -22,10 +18,14 @@
     </thead>
     <tbody>
       <tr>
-        <td>Acep</td>
-        <td>2023-12-7, 14:30:25</td>
-        <td>2023-12-9</td>
-        <td><button type="button" class="btn btn-secondary btn-sm"><i class="bi bi-pencil-square"></i></button></td>
+        <td>Sepeda Motor</td>
+        <td>20000</td>
+        <td>Ini Adalah Ticket Resmi Pintu Masuk Jenis Sepeda Motor</td>
+        <td>
+          <a href="" class="badge bg-info"><i class="bi bi-eye-fill"></i></a>
+          <a href="" class="badge bg-warning"><i class="bi bi-pencil-square"></i></a>
+          <a href="" class="badge bg-danger"><i class="bi bi-x-circle"></i></a>
+        </td>
       </tr>
     </tbody>
   </table>
