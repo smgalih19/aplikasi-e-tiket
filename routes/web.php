@@ -5,6 +5,7 @@ use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\DashboardTiketController;
 use App\Http\Controllers\DashboardUserTiketController;
+use App\Http\Controllers\TicketController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,9 +22,7 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/viewtiket', function () {
-    return view('viewtiket');
-});
+Route::get('/viewtiket', [TicketController::class, 'index']);
 
 Route::get('/aboutus', function () {
     return view('aboutus');
@@ -36,15 +35,14 @@ Route::post('/logout', [LoginController::class, 'logout']);
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
 
+// Admin
 Route::get('/dashboard', function(){
     return view('dashboard.index');
 })->middleware('auth');
 
-Route::resource('/dashboard/history', DashboardTiketController::class)->middleware('auth');
-Route::get('/dashboard/data-ticket', [DashboardTiketController::class, 'ticket'])->middleware('auth');
+Route::resource('/dashboard/data-ticket', DashboardTiketController::class)->middleware('auth');
 
+// User
 Route::get('/dashboard-user', function(){
     return view('dashboard-user.index');
 })->middleware('auth');
-
-Route::resource('/dashboard-user/index' , DashboardUserTiketController::class);
