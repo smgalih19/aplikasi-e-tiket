@@ -21,6 +21,10 @@ class DashboardTiketController extends Controller
         ]);
     }
 
+    public function history()
+    {
+        return view('dashboard.history-ticket.index');
+    }
 
     /**
      * Show the form for creating a new resource.

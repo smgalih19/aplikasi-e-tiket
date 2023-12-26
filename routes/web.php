@@ -2,10 +2,12 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
-use App\Http\Controllers\RegisterController;
-use App\Http\Controllers\DashboardTiketController;
-use App\Http\Controllers\DashboardUserTiketController;
 use App\Http\Controllers\TicketController;
+use App\Http\Controllers\RegisterController;
+use App\Http\Controllers\UpdateProfileController;
+use App\Http\Controllers\DashboardTiketController;
+use App\Http\Controllers\UpdatePasswordController;
+use App\Http\Controllers\DashboardUserTiketController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,10 +30,12 @@ Route::get('/aboutus', function () {
     return view('aboutus');
 });
 
+//Login
 Route::get('/login', [LoginController::class, 'index'])->name('login')->middleware('guest');
 Route::post('/login', [LoginController::class, 'authenticate']);
 Route::post('/logout', [LoginController::class, 'logout']);
 
+//Register
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
 
@@ -41,8 +45,18 @@ Route::get('/dashboard', function(){
 })->middleware('auth');
 
 Route::resource('/dashboard/data-ticket', DashboardTiketController::class)->middleware('auth');
+Route::get('/dashboard/history-ticket', [DashboardTiketController::class, 'history']);
 
 // User
 Route::get('/dashboard-user', function(){
     return view('dashboard-user.index');
 })->middleware('auth');
+
+// UpdateProfile
+Route::middleware(['auth'])->group(function () {
+    Route::get('/dashboard/update-profile',[UpdateProfileController::class,'index'])->name('profile');
+    Route::post('/dashboard/update-profile/{user}',[UpdateProfileController::class,'update'])->name('profile.update');
+});
+
+Route::get('/dashboard/update-profile/password/edit', [UpdatePasswordController::class, 'edit']);
+Route::put('/dashboard/update-profile/password/edit', [UpdatePasswordController::class, 'update']);

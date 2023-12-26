@@ -24,8 +24,8 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link align-items-center gap-2 {{ Request::is('dashboard/history') ? 'active' : '' }}"
-                        href="/dashboard/history">
+                    <a class="nav-link align-items-center gap-2 {{ Request::is('dashboard/history-ticket') ? 'active' : '' }}"
+                        href="/dashboard/history-ticket">
                         <i class="bi bi-file-earmark"></i>
                         Data Order
                     </a>
@@ -34,9 +34,10 @@
             <hr>
             <ul class="nav flex-column mb-auto">
                 <li class="nav-item"></li>
-                <a class="nav-link align-items-center gap-2" href="/dashboard">
+                <a class="nav-link align-items-center gap-2 {{ Request::is('dashboard/update-profile*') ? 'active' : '' }}"
+                    href="/dashboard/update-profile">
                     <i class="bi bi-person-badge-fill"></i>
-                    User Profile
+                    Update Profile
                 </a>
                 </li>
 
