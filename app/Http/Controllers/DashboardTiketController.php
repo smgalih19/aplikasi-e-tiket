@@ -40,7 +40,7 @@ class DashboardTiketController extends Controller
     {
         $validatedData = $request->validate([
             'name' => 'required|max:255',
-            'price' => 'required',
+            'price' => 'required|numeric|gt:0',
             'description' => 'required',
         ]);
 
@@ -76,7 +76,7 @@ class DashboardTiketController extends Controller
     {
         $validatedData = $request->validate([
             'name' => 'required|max:255',
-            'price' => 'required|numeric',
+            'price' => 'required|numeric|gt:0',
             'description' => 'required',
         ]);
         
