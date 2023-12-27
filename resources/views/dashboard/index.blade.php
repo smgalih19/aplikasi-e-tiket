@@ -6,7 +6,7 @@
     </div>
 
     <div class="row">
-        <div class="col-sm-3 mb-3 mb-sm-3">
+        <div class="col-sm-4 mb-3 mb-sm-3">
             <div class="card">
                 <div class="card-body">
                     <div class="row align-items-center">
@@ -15,14 +15,14 @@
                             <div class="h5 mb-0">10.000</div>
                         </div>
                         <div class="col-auto">
-                            <i class="bi bi-people"></i>
+                            <i class="bi bi-people" style="font-size: 2rem; color: cornflowerblue;"></i>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="col-sm-3 mb-3 mb-sm-3">
+        <div class="col-sm-4 mb-3 mb-sm-3">
             <div class="card">
                 <div class="card-body">
                     <div class="row align-items-center">
@@ -31,14 +31,14 @@
                             <div class="h5 mb-0">10.000</div>
                         </div>
                         <div class="col-auto">
-                            <i class="bi bi-ticket-detailed"></i>
+                            <i class="bi bi-ticket-detailed" style="font-size: 2rem; color: cornflowerblue;"></i>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
 
-        <div class="col-sm-3 mb-3 mb-sm-3">
+        <div class="col-sm-4 mb-3 mb-sm-3">
             <div class="card">
                 <div class="card-body">
                     <div class="row align-items-center">
@@ -47,7 +47,7 @@
                             <div class="h5 mb-0">10.000</div>
                         </div>
                         <div class="col-auto">
-                            <i class="bi bi-check2"></i>
+                            <i class="bi bi-check2" style="font-size: 2rem; color: cornflowerblue;"></i>
                         </div>
                     </div>
                 </div>

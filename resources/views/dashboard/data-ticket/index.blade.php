@@ -34,7 +34,7 @@
                                 <tr>
                                     <td>{{ $loop->iteration }}</td>
                                     <td>{{ $post->name }}</td>
-                                    <td><span style="color: red">IDR</span> {{ $post->price }}</td>
+                                    <td><span style="color: red; font-weight: bold">IDR</span> {{ $post->price }}</td>
                                     <td>{{ $post->description }}</td>
                                     <td>
                                         <a href="/dashboard/data-ticket/{{ $post->id }}/edit"
