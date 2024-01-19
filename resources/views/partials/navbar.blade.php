@@ -17,27 +17,32 @@
                     <a class="nav-link text-dark" href="/aboutus">Tentang Kami</a>
                 </li>
             </ul>
-            
+
             <ul class="navbar-nav ms-auto">
                 @auth
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle text-black" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        Hallo, {{ auth()->user()->name }}
-                    </a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item" href="{{ auth()->user()->is_admin ? '/dashboard' : '/dashboard-user' }}"><i class="bi bi-justify-left"></i> Dashboard</a></li>
-                        <li><hr class="dropdown-divider"></li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle text-black" href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Hallo, {{ auth()->user()->name }}
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item"
+                                    href="{{ auth()->user()->is_admin ? '/dashboard' : '/dashboard-user' }}"><i
+                                        class="bi bi-justify-left"></i> Dashboard</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
                             <form action="/logout" method="post">
                                 @csrf
                                 <button type="submit" class="dropdown-item"><i class="bi bi-box-arrow-right">
-                                </i>Logout</button>
+                                    </i>Logout</button>
                             </form>
-                    </ul>
-                </li>
+                        </ul>
+                    </li>
                 @else
-                <li class="nav-item">
-                    <a href="/login" class="btn btn-outline-secondary" role="button">Login</a>
-                </li>
+                    <li class="nav-item">
+                        <a href="/login" class="btn btn-outline-secondary" role="button">Login</a>
+                    </li>
                 @endauth
             </ul>
 

@@ -16,7 +16,7 @@
             <div class="row">
                 <div class="copyright col text-center">
                     <hr>
-                    <p>Copyright © <a>e-Ticketing Pangandaran 2023. All rights reserved</a>
+                    <p>Copyright © <a>e-Ticketing Pangandaran 2024. All rights reserved</a>
                 </div>
             </div>
         </div>
