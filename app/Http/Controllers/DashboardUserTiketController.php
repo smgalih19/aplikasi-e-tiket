@@ -12,7 +12,12 @@ class DashboardUserTiketController extends Controller
      */
     public function index()
     {
-        //
+        return view('dashboard-user.data-user.index');
+    }
+
+    public function order()
+    {
+        return view('dashboard-user.data-order.index');
     }
 
     /**

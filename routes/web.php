@@ -39,24 +39,26 @@ Route::post('/logout', [LoginController::class, 'logout']);
 Route::get('/register', [RegisterController::class, 'index'])->middleware('guest');
 Route::post('/register', [RegisterController::class, 'store']);
 
-// Admin
+// Dashboard Admin
 Route::get('/dashboard', function(){
     return view('dashboard.index');
 })->middleware('auth');
 
 Route::resource('/dashboard/data-ticket', DashboardTiketController::class)->middleware('auth');
 Route::get('/dashboard/history-ticket', [DashboardTiketController::class, 'history']);
+Route::get('/dashboard/update-profile/password/edit', [UpdatePasswordController::class, 'edit']);
+Route::put('/dashboard/update-profile/password/edit', [UpdatePasswordController::class, 'update']);
 
-// User
-Route::get('/dashboard-user', function(){
-    return view('dashboard-user.index');
-})->middleware('auth');
-
-// UpdateProfile
+// UpdateProfileAdmin
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard/update-profile',[UpdateProfileController::class,'index'])->name('profile');
     Route::post('/dashboard/update-profile/{user}',[UpdateProfileController::class,'update'])->name('profile.update');
 });
 
-Route::get('/dashboard/update-profile/password/edit', [UpdatePasswordController::class, 'edit']);
-Route::put('/dashboard/update-profile/password/edit', [UpdatePasswordController::class, 'update']);
+// Dashboard User
+Route::get('/dashboard-user', function(){
+    return view('dashboard-user.index');
+})->middleware('auth');
+
+Route::resource('/dashboard-user/data-user', DashboardUserTiketController::class)->middleware('auth');
+Route::get('/dashboard-user/data-order', [DashboardUserTiketController::class, 'order']);
