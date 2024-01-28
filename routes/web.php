@@ -62,3 +62,16 @@ Route::get('/dashboard-user', function(){
 
 Route::resource('/dashboard-user/data-user', DashboardUserTiketController::class)->middleware('auth');
 Route::get('/dashboard-user/data-order', [DashboardUserTiketController::class, 'order']);
+Route::get('/dashboard-user/update-profile-user/password/edit', [UpdatePasswordController::class, 'edituser']);
+Route::put('/dashboard-user/update-profile-user/password/edit', [UpdatePasswordController::class, 'updateuser']);
+
+// UpdateProfileUser
+Route::middleware(['auth'])->group(function () {
+    Route::get('/dashboard-user/update-profile-user',[UpdateProfileController::class,'indexuser'])->name('profile');
+    Route::post('/dashboard-user/update-profile-user/{user}',[UpdateProfileController::class,'updateuser'])->name('profile.update');
+});
+
+// Transaction
+Route::middleware(['auth'])->group(function () {
+    Route::post('/transaction/create', [TicketController::class, 'store'])->name('transaction.create');
+});

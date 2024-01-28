@@ -12,6 +12,7 @@
                             <div class="row">
                                 <div class="col">
                                     <div class="form-check">
+                                        <input type="hidden" name="id" value="{{ $ticket->id }}">
                                         <input class="form-check-input" type="radio" name="flexRadioDefault"
                                             id="flexRadioDefault1">
                                         <label class="form-check-label" for="flexRadioDefault1">
@@ -33,7 +34,8 @@
                     <h5 class="tiket-pilih">Isi data lengkap dibawah ini</h5>
                     <hr>
 
-                    <form>
+                    <form action="{{ route('transaction.create') }}" method="post">
+                        @csrf
                         <div class="mb-4">
                             <label for="name">Nama :</label>
                             <input type="text" name="name"
@@ -63,82 +65,13 @@
                                 <span class="up" onClick='increaseCount(event, this)'>+</span>
                             </div>
                         </div>
-
-                        <div class="mb-4">
-                            <fieldset>
-                                <label class="gender">Jenis Kelamin :</label>
-
-                                <input class="form-check-input mx-1" type="radio" name="gender" id="gender1">
-                                <label class="form-check-label" for="gender1">
-                                    Laki-Laki
-                                </label>
-
-                                <input class="form-check-input mx-1" type="radio" name="gender" id="gender2">
-                                <label class="form-check-label" for="gender2">
-                                    Perempuan
-                                </label>
-                            </fieldset>
-                        </div>
                         <button class="btn btn-success" type="submit">Lanjutkan Pembayaran</button>
                     </form>
-
                 </div>
-
-                {{-- <form>
-                        <div class="row mb-3">
-                            <label for="specificSizeInputName" class="col-sm-2 col-form-label">Nama:</label>
-                            <div class="col-sm-10">
-                                <input type="text" class="form-control" placeholder="Nama Lengkap"
-                                    aria-label="First name">
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="inputEmail3" class="col-sm-2 col-form-label">Email:</label>
-                            <div class="col-sm-10">
-                                <input type="email" class="form-control" id="inputEmail3" placeholder="Alamat Email">
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="no-handphone" class="col-sm-2 col-form-label">No Telepon:</label>
-                            <div class="col-sm-10">
-                                <input type="no-handphone" class="form-control" id="no-handphone"
-                                    placeholder="Nomor Telepon">
-                            </div>
-                        </div>
-
-                        <div class="row mb-3">
-                            <label for="inputEmail3" class="col-sm-2">Jumlah Tiket:</label>
-                            <div class="col-sm-10 counter">
-                                <span class="down" onClick='decreaseCount(event, this)'>-</span>
-                                <input type="text" value="1">
-                                <span class="up" onClick='increaseCount(event, this)'>+</span>
-                            </div>
-                        </div>
-
-                        <fieldset>
-                            <label class="gender @error('gender')is-invalid @enderror">Jenis Kelamin:</label>
-                            @error('gender')
-                                <div class="invalid-feedback">
-                                    {{ $message }}
-                                </div>
-                            @enderror
-                            <input class="form-check-input" type="radio" name="gender" id="gender1" value="male"
-                                style="margin-left: 10px">
-                            <label class="form-check-label" for="gender1">Laki-Laki</label>
-
-                            <input class="form-check-input mb-4" type="radio" name="gender" id="gender2" value="female"
-                                style="margin-left: 10px">
-                            <label class="form-check-label" for="gender2">Perempuan</label>
-                        </fieldset>
-                        <button type="submit" class="btn btn-success">Lanjutkan Pembayaran</button>
-                    </form> --}}
             </div>
-
         </div>
     </div>
-    </div>
+
     <script>
         function increaseCount(a, b) {
             var input = b.previousElementSibling;

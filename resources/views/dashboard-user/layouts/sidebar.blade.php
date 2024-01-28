@@ -27,8 +27,8 @@
             <hr>
             <ul class="nav flex-column mb-auto">
                 <li class="nav-item"></li>
-                <a class="nav-link align-items-center gap-2 {{ Request::is('dashboard-user/update-profile*') ? 'active' : '' }}"
-                    href="/dashboard-user/update-profile">
+                <a class="nav-link align-items-center gap-2 {{ Request::is('dashboard-user/update-profile-user*') ? 'active' : '' }}"
+                    href="/dashboard-user/update-profile-user">
                     <i class="bi bi-person-badge-fill"></i>
                     Update Profile
                 </a>

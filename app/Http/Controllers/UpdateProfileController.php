@@ -14,6 +14,11 @@ class UpdateProfileController extends Controller
         return view('dashboard.update-profile.index');
     }
 
+    public function indexuser()
+    {
+        return view('dashboard-user.update-profile-user.index');
+    }
+
     public function update(User $user, Request $request)
     {   
         $user->update([
@@ -26,5 +31,19 @@ class UpdateProfileController extends Controller
 
         Alert::success('Success!', 'Menambahkan Data Ticket');
         return redirect('/dashboard/update-profile');
+    }
+
+    public function updateuser(User $user, Request $request)
+    {   
+        $user->update([
+            'name' => $request->name,
+            'email' => $request->email,
+            'phone_number' => $request->phone_number,
+            'gender' => $request->gender,
+            'updated_at' => now()
+        ]);
+
+        Alert::success('Success!', 'Menambahkan Data Ticket');
+        return redirect('/dashboard-user/update-profile-user');
     }
 }
