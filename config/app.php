@@ -185,4 +185,7 @@ return [
         // 'Example' => App\Facades\Example::class,
     ])->toArray(),
 
+
+    // XENDIT
+    'xendit_api_key' => base64_encode(env('XENDIT_API_KEY').':'),
 ];

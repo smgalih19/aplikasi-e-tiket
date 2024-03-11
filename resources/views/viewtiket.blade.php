@@ -7,25 +7,26 @@
                     <h5 class="tiket-pilih text-white">Pilih tiket dibawah ini</h5>
                     <hr class="text-white">
 
-                    @foreach ($tickets as $ticket)
-                        <div class="macam-tiket">
-                            <div class="row">
-                                <div class="col">
-                                    <div class="form-check">
-                                        <input type="hidden" name="id" value="{{ $ticket->id }}">
-                                        <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                            id="flexRadioDefault1">
-                                        <label class="form-check-label" for="flexRadioDefault1">
-                                            <b>{{ $ticket->name }}</b>
-                                        </label>
+                    <form action="{{ route('transaction.create') }}" method="post">
+                        @foreach ($tickets as $ticket)
+                            <div class="macam-tiket">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-check">
+                                            <input type="hidden" name="ticket_id" value="{{ $ticket->id }}">
+                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
+                                                id="flexRadioDefault1">
+                                            <label class="form-check-label" for="flexRadioDefault1">
+                                                <b>{{ $ticket->name }}</b>
+                                            </label>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
-                            <hr>
-                            <h3 class="text-danger">IDR {{ $ticket->price }}</h3>
-                            <p>{{ $ticket->description }}.</p>
-                        </div><br>
-                    @endforeach
+                                <hr>
+                                <h3 id="price" class="text-danger">IDR {{ $ticket->price }}</h3>
+                                <p>{{ $ticket->description }}.</p>
+                            </div><br>
+                        @endforeach
 
                 </div>
 
@@ -34,38 +35,38 @@
                     <h5 class="tiket-pilih">Isi data lengkap dibawah ini</h5>
                     <hr>
 
-                    <form action="{{ route('transaction.create') }}" method="post">
-                        @csrf
-                        <div class="mb-4">
-                            <label for="name">Nama :</label>
-                            <input type="text" name="name"
-                                class="form-control rounded-top @error('name')is-invalid @enderror" id="name"
-                                placeholder="Nama lengkap" required>
-                        </div>
 
-                        <div class="mb-4">
-                            <label for="email">Email :</label>
-                            <input type="text" name="email"
-                                class="form-control rounded-top @error('email')is-invalid @enderror" id="email"
-                                placeholder="Alamat email" required>
-                        </div>
+                    @csrf
+                    <div class="mb-4">
+                        <label for="name">Nama :</label>
+                        <input type="text" name="name_buyer"
+                            class="form-control rounded-top @error('name')is-invalid @enderror" id="name"
+                            placeholder="Nama lengkap" required>
+                    </div>
 
-                        <div class="mb-4">
-                            <label for="phone_number">No Telepon :</label>
-                            <input type="text" name="phone_number"
-                                class="form-control rounded-top @error('phone_number')is-invalid @enderror"
-                                id="phone_number" placeholder="Masukan no telepon" required>
-                        </div>
+                    <div class="mb-4">
+                        <label for="email">Email :</label>
+                        <input type="text" name="email"
+                            class="form-control rounded-top @error('email')is-invalid @enderror" id="email"
+                            placeholder="Alamat email" required>
+                    </div>
 
-                        <div class="row mb-4">
-                            <div class="col counter">
-                                <label for="tiket_qty">Jumlah Tiket :</label>
-                                <span class="down mx-2" onClick='decreaseCount(event, this)'>-</span>
-                                <input type="text" value="1">
-                                <span class="up" onClick='increaseCount(event, this)'>+</span>
-                            </div>
+                    <div class="mb-4">
+                        <label for="phone_number">No Telepon :</label>
+                        <input type="text" name="phone_number"
+                            class="form-control rounded-top @error('phone_number')is-invalid @enderror" id="phone_number"
+                            placeholder="Masukan no telepon" required>
+                    </div>
+
+                    <div class="row mb-4">
+                        <div class="col counter">
+                            <label for="tiket_qty">Jumlah Tiket :</label>
+                            <span class="down mx-2" onClick='decreaseCount(event, this)'>-</span>
+                            <input type="text" value="1" name="qty">
+                            <span class="up" onClick='increaseCount(event, this)'>+</span>
                         </div>
-                        <button class="btn btn-success" type="submit">Lanjutkan Pembayaran</button>
+                    </div>
+                    <button class="btn btn-success" type="submit">Lanjutkan Pembayaran</button>
                     </form>
                 </div>
             </div>

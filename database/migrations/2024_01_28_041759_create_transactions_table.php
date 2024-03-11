@@ -17,12 +17,15 @@ return new class extends Migration
             $table->foreign('user_id')->references('id')->on('users');
             $table->unsignedBigInteger('ticket_id');
             $table->foreign('ticket_id')->references('id')->on('tickets');
+            $table->string('external_id', 255);
             $table->string('name_buyer', 255);
             $table->string('email', 255);
-            $table->integer('qyt');
+            $table->string('phone_number', 255);
+            $table->integer('qty');
+            $table->integer('amount');
             $table->string('status_transaction', 255);
-            $table->dateTime('expired_date_transaction');
-            $table->dateTime('expired_date_ticket');
+            $table->string('expired_date_transaction');
+            $table->string('expired_date_ticket')->nullable();
             $table->text('data_payment_gateway');
             $table->timestamps();
         });
