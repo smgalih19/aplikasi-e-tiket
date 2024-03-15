@@ -8,6 +8,8 @@ use App\Http\Controllers\UpdateProfileController;
 use App\Http\Controllers\DashboardTiketController;
 use App\Http\Controllers\UpdatePasswordController;
 use App\Http\Controllers\DashboardUserTiketController;
+use App\Http\Controllers\DashboardAdminController;
+use App\Http\Controllers\DashboardUserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,9 +42,7 @@ Route::get('/register', [RegisterController::class, 'index'])->middleware('guest
 Route::post('/register', [RegisterController::class, 'store']);
 
 // Dashboard Admin
-Route::get('/dashboard', function(){
-    return view('dashboard.index');
-})->middleware('auth');
+Route::get('/dashboard', [DashboardAdminController::class, 'index'])->middleware('auth');
 
 Route::resource('/dashboard/data-ticket', DashboardTiketController::class)->middleware('auth');
 Route::get('/dashboard/history-ticket', [DashboardTiketController::class, 'history']);
@@ -56,9 +56,7 @@ Route::middleware(['auth'])->group(function () {
 });
 
 // Dashboard User
-Route::get('/dashboard-user', function(){
-    return view('dashboard-user.index');
-})->middleware('auth');
+Route::get('/dashboard-user', [DashboardUserController::class, 'index'])->middleware('auth');
 
 Route::resource('/dashboard-user/data-user', DashboardUserTiketController::class)->middleware('auth');
 Route::get('/dashboard-user/data-order', [DashboardUserTiketController::class, 'order']);

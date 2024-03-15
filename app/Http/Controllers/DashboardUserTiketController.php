@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\DashboardUser;
+use App\Models\Transaction;
 use Illuminate\Http\Request;
 
 class DashboardUserTiketController extends Controller
@@ -17,7 +18,9 @@ class DashboardUserTiketController extends Controller
 
     public function order()
     {
-        return view('dashboard-user.data-order.index');
+        return view('dashboard-user.data-order.index', [
+            "transactions" => Transaction::where('user_id', auth()->user()->id)->get()
+        ]);
     }
 
     /**

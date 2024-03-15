@@ -12,7 +12,7 @@
                     <div class="row align-items-center">
                         <div class="col">
                             <div class="mb-1">Total Transaction</div>
-                            <div class="h5 mb-0">1000</div>
+                            <div class="h5 mb-0">{{$transactions}}</div>
                         </div>
                         <div class="col-auto">
                             <i class="bi bi-people" style="font-size: 2rem; color: cornflowerblue;"></i>

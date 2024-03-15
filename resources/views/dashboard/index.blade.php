@@ -11,8 +11,8 @@
                 <div class="card-body">
                     <div class="row align-items-center">
                         <div class="col">
-                            <div class="mb-1">Total Transaction Visitor</div>
-                            <div class="h5 mb-0">10.000</div>
+                            <div class="mb-1">Total Users</div>
+                            <div class="h5 mb-0">{{$users}}</div>
                         </div>
                         <div class="col-auto">
                             <i class="bi bi-people" style="font-size: 2rem; color: cornflowerblue;"></i>
@@ -27,8 +27,8 @@
                 <div class="card-body">
                     <div class="row align-items-center">
                         <div class="col">
-                            <div class="mb-1">Total Ticket Sold</div>
-                            <div class="h5 mb-0">10.000</div>
+                            <div class="mb-1">Total Transaction</div>
+                            <div class="h5 mb-0">{{$transaction}}</div>
                         </div>
                         <div class="col-auto">
                             <i class="bi bi-ticket-detailed" style="font-size: 2rem; color: cornflowerblue;"></i>
@@ -44,7 +44,7 @@
                     <div class="row align-items-center">
                         <div class="col">
                             <div class="mb-1">Total Ticket Available</div>
-                            <div class="h5 mb-0">10.000</div>
+                            <div class="h5 mb-0">{{$tickets}}</div>
                         </div>
                         <div class="col-auto">
                             <i class="bi bi-check2" style="font-size: 2rem; color: cornflowerblue;"></i>

@@ -7,6 +7,7 @@ use App\Models\Ticket;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Http\Controllers\Controller;
+use App\Models\Transaction;
 use RealRashid\SweetAlert\Facades\Alert;
 
 class DashboardTiketController extends Controller
@@ -23,7 +24,9 @@ class DashboardTiketController extends Controller
 
     public function history()
     {
-        return view('dashboard.history-ticket.index');
+        return view('dashboard.history-ticket.index', [
+            'transactions' => Transaction::all()
+        ]);
     }
 
     /**

@@ -28,36 +28,26 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                    <td>IT00321</td>
-                                    <td>Acep</td>
-                                    <td>2023-12-7, 14:30:25</td>
-                                    <td>2023-12-9</td>
-                                    <td><span class="badge text-bg-success">Success</span></td>
-                                    <td><button type="button" class="btn btn-secondary btn-sm"><i
-                                                class="bi bi-pencil-square"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>IT00322</td>
-                                    <td>Ujang</td>
-                                    <td>2023-12-3, 14:30:25</td>
-                                    <td>2023-12-5</td>
-                                    <td><span class="badge text-bg-warning">On Process</span></td>
-                                    <td><button type="button" class="btn btn-secondary btn-sm"><i
-                                                class="bi bi-pencil-square"></i></button>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>IT00323</td>
-                                    <td>Asep</td>
-                                    <td>2023-12-10, 14:30:25</td>
-                                    <td>2023-12-12</td>
-                                    <td><span class="badge text-bg-danger">Fail</span></td>
-                                    <td><button type="button" class="btn btn-secondary btn-sm"><i
-                                                class="bi bi-pencil-square"></i></button>
-                                    </td>
-                                </tr>
+                                @foreach ($transactions as $ts)
+                                    <tr>
+                                        <td>{{$ts->external_id}}</td>
+                                        <td>{{$ts->name_buyer}}</td>
+                                        <td>{{$ts->created_at}}</td>
+                                        <td>{{$ts->expired_date_ticket}}</td>
+                                        <td>
+                                            @if ($ts->status_transaction == "PAID")
+                                            <span class="badge text-bg-success">Success</span>
+                                            @elseif ($ts->status_transaction == "EXPIRED")
+                                            <span class="badge text-bg-danger">Expired</span>
+                                            @else
+                                            <span class="badge text-bg-warning">Pending</span>
+                                            @endif
+                                        </td>
+                                        <td><button type="button" class="btn btn-secondary btn-sm"><i
+                                                    class="bi bi-pencil-square"></i></button>
+                                        </td>
+                                    </tr>
+                                @endforeach
                             </tbody>
                         </table>
                     </div>
