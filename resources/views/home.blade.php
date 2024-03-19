@@ -21,29 +21,28 @@
         <div class="container text-center mt-5">
             <div class="row justify-content-center about-us">
 
-                <h4>Informasi Terkait Wisata di <span>Pangandaran</span></h4>
+                <h4>Pelayanan <span>Kami</span></h4>
+                <p>Kami mengutamakan kepuasan dalam setiap pelayanan pengunjung, pelayanan terbaik kami berupa</p>
                 <div class="card-group">
                     <div class="card">
                         <div class="card-body">
-                            <img src="img/marlin.png" class="card-img-top">
-                            <h5 class="card-title">Pantai Barat Pangandaran</h5>
-                            <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Numquam, vel.</p>
+                            <img src="img/icon1_pay.png" class="card-img-top">
+                            <h5 class="card-title">Kemudahan Pembayaran Berbagai Pilihan</h5>
+                            <p class="card-text">Menyediakan berbagai opsi pembayaran online, seperti kartu kredit, debit, atau metode pembayaran elektronik lainnya.</p>
                         </div>
                     </div>
                     <div class="card">
                         <div class="card-body">
-                            <img src="img/marlin.png" class="card-img-top">
-                            <h5 class="card-title">Cagar Alam Pangandaran</h5>
-                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quos, perferendis.
-                            </p>
+                            <img src="img/icon3_transaction.png" class="card-img-top">
+                            <h5 class="card-title">Kemudahan Pembelian Tiket dimanapun</h5>
+                            <p class="card-text">Beli tiket wisata tidak lagi antri lama, melalui website e-Ticket lebih mudah pesan tiket kapan saja dan dimana saja</p>
                         </div>
                     </div>
                     <div class="card">
                         <div class="card-body">
-                            <img src="img/marlin.png" class="card-img-top">
-                            <h5 class="card-title">Pantai Timur Pangandaran</h5>
-                            <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi, suscipit.
-                            </p>
+                            <img src="img/icon2_time.png" class="card-img-top">
+                            <h5 class="card-title">Menghemat Waktu Pembayaran Tiket</h5>
+                            <p class="card-text">Pengunjung hanya perlu menunjukan e-Ticket di pintu masuk untuk pengecekan yang prosesnya tidak akan lama</p>
                         </div>
                     </div>
                 </div>

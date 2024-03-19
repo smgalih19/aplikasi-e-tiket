@@ -40,7 +40,7 @@
 }
 /* Akhir About Us */
 
-/* Awal Card Body Info Wisata */
+/* Awal Card Body Pelayanan Kami*/
 .card {
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
@@ -53,9 +53,10 @@
 }
 
 .card-body img {
-    width: 50%;
+    width: 30%;
+    margin-bottom: 10px;
 }
-/* Akhir Card Body Info Wisata */
+/* Akhir Card Body Pelayanan Kami */
 
 /* Awal Footer */
 .footer {

@@ -35,20 +35,19 @@
                     <h5 class="tiket-pilih">Isi data lengkap dibawah ini</h5>
                     <hr>
 
-
                     @csrf
                     <div class="mb-4">
                         <label for="name">Nama :</label>
                         <input type="text" name="name_buyer"
                             class="form-control rounded-top @error('name')is-invalid @enderror" id="name"
-                            placeholder="Nama lengkap" required>
+                            placeholder="Masukan nama lengkap" required>
                     </div>
 
                     <div class="mb-4">
                         <label for="email">Email :</label>
                         <input type="text" name="email"
                             class="form-control rounded-top @error('email')is-invalid @enderror" id="email"
-                            placeholder="Alamat email" required>
+                            placeholder="nama@example.com" required>
                     </div>
 
                     <div class="mb-4">
