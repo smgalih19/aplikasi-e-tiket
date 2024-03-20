@@ -17,6 +17,8 @@
                                     <th scope="col">Name</th>
                                     <th scope="col">Transaction Date</th>
                                     <th scope="col">Expired Date Ticket</th>
+                                    <th scope="col">Qty</th>
+                                    <th scope="col">Price</th>
                                     <th scope="col">Status Transaction</th>
                                     <th scope="col">Action</th>
                                 </tr>
@@ -28,6 +30,8 @@
                                         <td>{{$ts->name_buyer}}</td>
                                         <td>{{$ts->created_at}}</td>
                                         <td>{{$ts->expired_date_ticket}}</td>
+                                        <td>{{$ts->qty}}</td>
+                                        <td>{{$ts->amount}}</td>
                                         <td>
                                             @if ($ts->status_transaction == "PAID")
                                             <span class="badge text-bg-success">Success</span>
@@ -37,9 +41,33 @@
                                             <span class="badge text-bg-warning">Pending</span>
                                             @endif
                                         </td>
-                                        <td><button type="button" class="btn btn-secondary btn-sm"><i
-                                                    class="bi bi-pencil-square"></i></button>
+
+                                        <td>
+                                            <!-- Button trigger modal -->
+                                            <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                                Detail Ticket
+                                            </button>
+                                            
+                                            <!-- Modal -->
+                                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                                <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                    <h1 class="modal-title fs-5" id="exampleModalLabel">e-Ticket Pangandaran</h1>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                        </div>
+                                                    <div class="modal-body">
+                                                    ...
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                                    </div>
+                                                </div>
+                                                </div>
+                                            </div>
                                         </td>
+
                                     </tr>
                                 @endforeach
                             </tbody>

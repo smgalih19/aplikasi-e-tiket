@@ -31,7 +31,7 @@ class TicketController extends Controller
                 'email' => $request['email'],
                 'mobile_number' => $request['phone_number'],
             ],
-            'success_redirect_url' => 'https://www.youtube.com/watch?v=i0e5Sr7cz6k',
+            'success_redirect_url' => 'invoice_url',
             'failure_redirect_url' => 'https://www.youtube.com/watch?v=oe7OIwHCYlA',
         ];
 
