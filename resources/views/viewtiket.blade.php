@@ -13,10 +13,9 @@
                                 <div class="row">
                                     <div class="col">
                                         <div class="form-check">
-                                            <input type="hidden" name="ticket_id" value="{{ $ticket->id }}">
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault"
-                                                id="flexRadioDefault1">
-                                            <label class="form-check-label" for="flexRadioDefault1">
+                                            <input class="form-check-input" type="radio" name="ticket_id" value="{{ $ticket->id }}"
+                                                id="flexRadioDefault{{ $ticket->id }}">
+                                            <label class="form-check-label" for="flexRadioDefault{{ $ticket->id }}">
                                                 <b>{{ $ticket->name }}</b>
                                             </label>
                                         </div>
@@ -27,7 +26,7 @@
                                 <p>{{ $ticket->description }}.</p>
                             </div><br>
                         @endforeach
-
+                        
                 </div>
 
                 {{-- Awal Bagian Tiket Terpilih --}}
@@ -60,9 +59,9 @@
                     <div class="row mb-4">
                         <div class="col counter">
                             <label for="tiket_qty">Jumlah Tiket :</label>
-                            <span class="down mx-2" onClick='decreaseCount(event, this)'>-</span>
+                            <span class="down mx-1" onClick='decreaseCount(event, this)'>-</span>
                             <input type="text" value="1" name="qty">
-                            <span class="up" onClick='increaseCount(event, this)'>+</span>
+                            <span class="up mx-1" onClick='increaseCount(event, this)'>+</span>
                         </div>
                     </div>
                     <button class="btn btn-success" type="submit">Lanjutkan Pembayaran</button>

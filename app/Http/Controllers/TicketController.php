@@ -6,8 +6,10 @@ use App\Models\Ticket;
 use App\Models\Transaction;
 use Illuminate\Http\Request;
 use App\Models\User;
+use DateTime;
 use Illuminate\Support\Facades\Http;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Str;
 
 class TicketController extends Controller
@@ -18,21 +20,20 @@ class TicketController extends Controller
     }
 
     function store(Request $request) {
-        $ticket = Ticket::find($request->ticket_id)->first();
-
+        $ticket = Ticket::findOrFail($request['ticket_id']);
 
         $user_id = auth()->user()->id;
 
         $xendit_payload = [
-            'external_id' => 'TICKET-'.$request['ticket_id'] . '-' . $user_id . '-' . Str::slug($request['name_buyer']),
+            'external_id' => 'TICKET-'.$request['ticket_id'] . '-' . $user_id . '-' . Str::slug($request['name_buyer'].'-' . DateTime::createFromFormat('Y-m-d H:i:s', now())->format('Y-m-d H:i:s')),
             'amount' => $ticket->price * intval($request['qty']),
             'customer' => [
                 'given_names' => $request['name_buyer'],
                 'email' => $request['email'],
                 'mobile_number' => $request['phone_number'],
             ],
-            'success_redirect_url' => 'invoice_url',
-            'failure_redirect_url' => 'https://www.youtube.com/watch?v=oe7OIwHCYlA',
+            'success_redirect_url' => URL::to('/dashboard-user'),
+            'failure_redirect_url' => URL::to('/viewtiket'),
         ];
 
         $dataRequest = Http::withHeaders([
