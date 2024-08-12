@@ -56,6 +56,12 @@
                             placeholder="Masukan no telepon" required>
                     </div>
 
+                    <div class="mb-4">
+                        <label for="date_ticket">Pilih Tanggal Kunjungan :</label>
+                        <input type="date" name="date_ticket"
+                            class="form-control rounded-top @error('date_ticket')is-invalid @enderror" id="date_ticket" required>
+                    </div>
+
                     <div class="row mb-4">
                         <div class="col counter">
                             <label for="tiket_qty">Jumlah Tiket :</label>

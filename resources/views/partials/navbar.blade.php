@@ -8,13 +8,13 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active text-dark" href="/">Home</a>
-                </li>
-                <li class="nav-item"></li>
-                <a class="nav-link text-dark" href="/viewtiket">Lihat Tiket</a>
+                    <a class="nav-link active" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link text-dark" href="/aboutus">Tentang Kami</a>
+                    <a class="nav-link" href="/viewtiket">Lihat Tiket</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/aboutus">Tentang Kami</a>
                 </li>
             </ul>
 

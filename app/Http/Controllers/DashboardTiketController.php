@@ -36,6 +36,7 @@ class DashboardTiketController extends Controller
     {
         return view('dashboard.data-ticket.create');
     }
+    
     /**
      * Store a newly created resource in storage.
      */
@@ -52,6 +53,7 @@ class DashboardTiketController extends Controller
         Alert::success('Success!', 'Menambahkan Data Ticket');
         return redirect('/dashboard/data-ticket');
     }
+
 
     /**
      * Display the specified resource.
@@ -89,6 +91,7 @@ class DashboardTiketController extends Controller
         Alert::success('Success!', 'Mengedit Data Ticket');
         return redirect('/dashboard/data-ticket');
     }
+
 
     /**
      * Remove the specified resource from storage.

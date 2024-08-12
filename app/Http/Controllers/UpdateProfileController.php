@@ -29,7 +29,7 @@ class UpdateProfileController extends Controller
             'updated_at' => now()
         ]);
 
-        Alert::success('Success!', 'Menambahkan Data Ticket');
+        Alert::success('Success!', 'Profile has been updated!');
         return redirect('/dashboard/update-profile');
     }
 
@@ -43,7 +43,7 @@ class UpdateProfileController extends Controller
             'updated_at' => now()
         ]);
 
-        Alert::success('Success!', 'Menambahkan Data Ticket');
+        Alert::success('Success!', 'Profile has been updated!');
         return redirect('/dashboard-user/update-profile-user');
     }
 }

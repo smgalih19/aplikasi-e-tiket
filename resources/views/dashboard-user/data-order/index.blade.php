@@ -13,64 +13,71 @@
                         <table class="table table-striped">
                             <thead>
                                 <tr>
-                                    <th scope="col">Id_Ticket</th>
+                                    <th scope="col">No</th>
                                     <th scope="col">Name</th>
                                     <th scope="col">Transaction Date</th>
-                                    <th scope="col">Expired Date Ticket</th>
-                                    <th scope="col">Qty</th>
-                                    <th scope="col">Price</th>
+                                    <th scope="col">Visit Date</th>
                                     <th scope="col">Status Transaction</th>
                                     <th scope="col">Action</th>
                                 </tr>
                             </thead>
                             <tbody>
+                                @php
+                                    $count = 1;
+                                @endphp
                             @foreach ($transactions as $ts)
-                                    <tr>
-                                        <td>{{$ts->external_id}}</td>
-                                        <td>{{$ts->name_buyer}}</td>
-                                        <td>{{$ts->created_at}}</td>
-                                        <td>{{$ts->expired_date_ticket}}</td>
-                                        <td>{{$ts->qty}}</td>
-                                        <td>{{$ts->amount}}</td>
-                                        <td>
-                                            @if ($ts->status_transaction == "PAID")
-                                            <span class="badge text-bg-success">Success</span>
-                                            @elseif ($ts->status_transaction == "EXPIRED")
-                                            <span class="badge text-bg-danger">Expired</span>
-                                            @else
-                                            <span class="badge text-bg-warning">Pending</span>
-                                            @endif
-                                        </td>
+                                <tr>
+                                    <td>{{ $count++ }}</td>
+                                    <td>{{$ts->name_buyer}}</td>
+                                    <td>{{$ts->created_at}}</td>
+                                    <td>{{$ts->date_ticket}}</td>
+                                    <td>
+                                        @if ($ts->status_transaction == "PAID")
+                                        <span class="badge text-bg-success">Success</span>
+                                        @elseif ($ts->status_transaction == "EXPIRED")
+                                        <span class="badge text-bg-danger">Expired</span>
+                                        @else
+                                        <span class="badge text-bg-warning">Pending</span>
+                                        @endif
+                                    </td>
+                                    
+                                    <td>
+                                        <!-- Button trigger modal -->
+                                        <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#detailModal{{ $ts->id }}">
+                                            Detail Ticket
+                                        </button>
+                                    </td>
+                            @endforeach
 
-                                        <td>
-                                            <!-- Button trigger modal -->
-                                            <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                                Detail Ticket
-                                            </button>
-                                            
-                                            <!-- Modal -->
-                                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                                <div class="modal-dialog">
+                            @foreach ($transactions as $ts)
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="detailModal{{ $ts->id }}" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                                            <div class="modal-dialog">
                                                 <div class="modal-content">
                                                     <div class="modal-header">
-                                                    <h1 class="modal-title fs-5" id="exampleModalLabel">e-Ticket Pangandaran</h1>
-                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                                        </div>
+                                                        <h1 class="modal-title fs-5" id="staticBackdropLabel">Detail Ticket</h1>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
                                                     <div class="modal-body">
-                                                    {{$ts->id}}
-                                                    {{$ts->amount}}
+                                                        <div class="row align-items-center">
+                                                            <div class="col-8">
+                                                                <p>Kode Ticket : {{$ts->external_id}}</p>
+                                                                <p>Jumlah Ticket : {{$ts->qty}}</p>
+                                                                <p>Harga Ticket : {{$ts->amount}}</p>
+                                                            </div>
+                                                            <div class="col-4">
+                                                                {!! DNS2D::getBarcodeSVG('Nama:' . $ts->name_buyer . '|Harga Ticket' . $ts->amount . '|Jumlah Ticket:' . $ts->qty, 'QRCODE', 5, 5, 'L') !!}
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                     <div class="modal-footer">
-                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                    <button type="button" class="btn btn-primary">Save changes</button>
+                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                                     </div>
                                                 </div>
-                                                </div>
                                             </div>
-                                        </td>
-
-                                    </tr>
-                                @endforeach
+                                        </div>
+                                    @endforeach
+                                </tr>
                             </tbody>
                         </table>
                     </div>

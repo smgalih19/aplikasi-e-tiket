@@ -56,6 +56,7 @@ class TicketController extends Controller
             'status_transaction' => $response['status'],
             'expired_date_transaction' => $response['expiry_date'],
             'data_payment_gateway' => json_encode($response),
+            'date_ticket' => $request['date_ticket'],
         ]);
 
         return Redirect::to($response['invoice_url']);

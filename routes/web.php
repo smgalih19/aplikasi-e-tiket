@@ -10,6 +10,7 @@ use App\Http\Controllers\UpdatePasswordController;
 use App\Http\Controllers\DashboardUserTiketController;
 use App\Http\Controllers\DashboardAdminController;
 use App\Http\Controllers\DashboardUserController;
+use App\Http\Controllers\UpdateDataTicket;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,7 +46,11 @@ Route::post('/register', [RegisterController::class, 'store']);
 Route::get('/dashboard', [DashboardAdminController::class, 'index'])->middleware('auth');
 
 Route::resource('/dashboard/data-ticket', DashboardTiketController::class)->middleware('auth');
-Route::get('/dashboard/history-ticket', [DashboardTiketController::class, 'history']);
+
+
+Route::resource('/dashboard/history-ticket', UpdateDataTicket::class)->middleware('auth');
+
+
 Route::get('/dashboard/update-profile/password/edit', [UpdatePasswordController::class, 'edit']);
 Route::put('/dashboard/update-profile/password/edit', [UpdatePasswordController::class, 'update']);
 
