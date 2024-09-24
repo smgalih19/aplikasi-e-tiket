@@ -46,6 +46,7 @@
                                         <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#detailModal{{ $ts->id }}">
                                             Detail Ticket
                                         </button>
+                                        <button type="button" class="btn btn-primary btn-sm">Download</button>
                                     </td>
                             @endforeach
 
