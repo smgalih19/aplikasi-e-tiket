@@ -59,7 +59,7 @@
                     <div class="mb-4">
                         <label for="date_ticket">Pilih Tanggal Kunjungan :</label>
                         <input type="date" name="date_ticket"
-                            class="form-control rounded-top @error('date_ticket')is-invalid @enderror" id="date_ticket" required>
+                            class="form-control rounded-top @error('date_ticket')is-invalid @enderror" id="date_ticket" style="width: 150px" required>
                     </div>
 
                     <div class="row mb-4">
@@ -95,5 +95,10 @@
                 input.value = value;
             }
         }
+    </script>
+    <script>
+        // Set minimum date untuk input date
+        const today = new Date().toISOString().split('T')[0];
+        document.getElementById('date_ticket').setAttribute('min', today);
     </script>
 @endsection()
