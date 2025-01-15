@@ -191,14 +191,4 @@ return [
 
     // XENDIT
     'xendit_api_key' => base64_encode(env('XENDIT_API_KEY').':'),
-
-    'providers' => [
-    // Providers lainnya...
-    Barryvdh\DomPDF\ServiceProvider::class,
-    ],
-
-    'aliases' => [
-        // Aliases lainnya...
-        'PDF' => Barryvdh\DomPDF\Facade::class,
-    ],
 ];

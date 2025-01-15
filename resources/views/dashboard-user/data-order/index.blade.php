@@ -40,13 +40,13 @@
                                         <span class="badge text-bg-warning">Pending</span>
                                         @endif
                                     </td>
-                                    
+
                                     <td>
                                         <!-- Button trigger modal -->
                                         <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#detailModal{{ $ts->id }}">
                                             Detail Ticket
                                         </button>
-                                        <a href="" class="btn btn-sm btn-primary">Download</a>
+                                        <a target="_blank" href="{{ route('download.pdf', ['id' => $ts->id]) }}" class="btn btn-sm btn-primary">Download</a>
                                     </td>
                             @endforeach
 
