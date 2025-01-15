@@ -46,7 +46,7 @@
                                         <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#detailModal{{ $ts->id }}">
                                             Detail Ticket
                                         </button>
-                                        <a href="{{ route('files.download', $ts->id) }}" class="btn btn-sm btn-primary">Download</a>
+                                        <a href="" class="btn btn-sm btn-primary">Download</a>
                                     </td>
                             @endforeach
 

@@ -68,6 +68,8 @@ Route::get('/dashboard-user/data-order', [DashboardUserTiketController::class, '
 Route::get('/dashboard-user/update-profile-user/password/edit', [UpdatePasswordController::class, 'edituser']);
 Route::put('/dashboard-user/update-profile-user/password/edit', [UpdatePasswordController::class, 'updateuser']);
 
+Route::get('/download-pdf', 'PdfController@downloadPdf')->name('download.pdf');
+
 // UpdateProfileUser
 Route::middleware(['auth'])->group(function () {
     Route::get('/dashboard-user/update-profile-user',[UpdateProfileController::class,'indexuser'])->name('profile');

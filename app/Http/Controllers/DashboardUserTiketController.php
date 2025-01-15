@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\DashboardUser;
 use App\Models\Transaction;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Facade;
 
 class DashboardUserTiketController extends Controller
 {
@@ -21,6 +22,17 @@ class DashboardUserTiketController extends Controller
         return view('dashboard-user.data-order.index', [
             "transactions" => Transaction::where('user_id', auth()->user()->id)->get()
         ]);
+    }
+
+    public function downloadPdf()
+    {
+        $data = []; // Siapkan data yang ingin Anda tampilkan di PDF
+        
+        // Load view dengan data yang disiapkan
+        $pdf = Facade::loadView('pdf.view', $data);
+        
+        // Download file PDF
+        return $pdf->download('nama-file.pdf');
     }
 
     /**
