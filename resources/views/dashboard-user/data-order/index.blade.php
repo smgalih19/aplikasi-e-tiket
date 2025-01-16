@@ -46,7 +46,7 @@
                                         <button type="button" class="btn btn-secondary btn-sm" data-bs-toggle="modal" data-bs-target="#detailModal{{ $ts->id }}">
                                             Detail Ticket
                                         </button>
-                                        <a href="" class="btn btn-sm btn-primary">Download</a>
+                                        <a target="_blank" href="{{ route('download.pdf',['id' => $ts->id])}}" class="btn btn-sm btn-primary">Print</a>
                                     </td>
                             @endforeach
 
@@ -62,9 +62,10 @@
                                                     <div class="modal-body">
                                                         <div class="row align-items-center">
                                                             <div class="col-8">
-                                                                <p>Kode Ticket : {{$ts->external_id}}</p>
-                                                                <p>Jumlah Ticket : {{$ts->qty}}</p>
-                                                                <p>Harga Ticket : {{$ts->amount}}</p>
+                                                                <p>Invoice - {{$ts->external_id}}</p>
+                                                                <p>Ticket: {{$ts->ticket->name}}</p>
+                                                                <p>Qty : {{$ts->qty}}</p>
+                                                                <p>Price :  {{$ts->amount}}</p>
                                                             </div>
                                                             <div class="col-4">
                                                                 {!! DNS2D::getBarcodeSVG('Nama:' . $ts->name_buyer . '|Harga Ticket' . $ts->amount . '|Jumlah Ticket:' . $ts->qty, 'QRCODE', 5, 5, 'L') !!}

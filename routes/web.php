@@ -10,6 +10,7 @@ use App\Http\Controllers\UpdatePasswordController;
 use App\Http\Controllers\DashboardUserTiketController;
 use App\Http\Controllers\DashboardAdminController;
 use App\Http\Controllers\DashboardUserController;
+use App\Http\Controllers\PrintController;
 use App\Http\Controllers\UpdateDataTicket;
 
 /*
@@ -68,7 +69,7 @@ Route::get('/dashboard-user/data-order', [DashboardUserTiketController::class, '
 Route::get('/dashboard-user/update-profile-user/password/edit', [UpdatePasswordController::class, 'edituser']);
 Route::put('/dashboard-user/update-profile-user/password/edit', [UpdatePasswordController::class, 'updateuser']);
 
-Route::get('/download-pdf', 'PdfController@downloadPdf')->name('download.pdf');
+Route::get('/download-pdf', [PrintController::class, 'print'])->name('download.pdf');
 
 // UpdateProfileUser
 Route::middleware(['auth'])->group(function () {
