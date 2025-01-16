@@ -10,8 +10,8 @@
         <form method="post" action="/dashboard/data-ticket" enctype="multipart/form-data">
             @csrf
             <div class="mb-3">
-                <label for="name" class="form-label @error('name') is-invalid @enderror">Name</label>
-                <input type="text" class="form-control" id="name" name="name" placeholder="Tiket Sepeda Motor"
+                <label for="name" class="form-label @error('name') is-invalid @enderror">Name Ticket</label>
+                <input type="text" class="form-control" id="name" name="name" placeholder="Input name ticket"
                     autofocus>
                 @error('name')
                     <div class="invalid-feedback">
@@ -22,7 +22,7 @@
 
             <div class="mb-3">
                 <label for="price" class="form-label @error('price') is-invalid @enderror">Price</label>
-                <input type="text" class="form-control" id="price" name="price" placeholder="50000">
+                <input type="text" class="form-control" id="price" name="price" placeholder="Input price ticket">
                 @error('price')
                     <div class="invalid-feedback">
                         {{ $message }}
@@ -32,7 +32,7 @@
 
             <div class="mb-3">
                 <label for="description" class="form-label @error('description') is-invalid @enderror">Description</label>
-                <input type="text" class="form-control" id="description" name="description">
+                <input type="text" class="form-control" id="description" name="description" placeholder="Input description ticket">
             </div>
 
             <button type="submit" class="btn btn-primary">Create Ticket</button>
