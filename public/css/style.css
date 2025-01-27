@@ -85,14 +85,23 @@
 }
 
 .macam-tiket {
-    border-radius: 15px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    transition: 0.3s;
     background-color: white;
-    padding: 10px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
 }
 
-.klik-cursor {
-    cursor: pointer;
+.macam-tiket:hover {
+    border-color: #007bff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.macam-tiket.active {
+    border-color: #007bff;
+    background-color: #f0f8ff;
 }
 /* Akhir Tiket Pilihan */
 

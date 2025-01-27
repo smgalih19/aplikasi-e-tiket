@@ -9,7 +9,7 @@
 
                     <form action="{{ route('transaction.create') }}" method="post">
                         @foreach ($tickets as $ticket)
-                            <div class="macam-tiket">
+                            {{-- <div class="macam-tiket">
                                 <div class="row">
                                     <div class="col">
                                         <div class="form-check">
@@ -24,7 +24,23 @@
                                 <hr>
                                 <h3 id="price" class="text-danger">IDR {{ $ticket->price }}</h3>
                                 <p>{{ $ticket->description }}.</p>
-                            </div><br>
+                            </div><br> --}}
+                            <div class="macam-tiket" onclick="selectTicket('{{ $ticket->id }}')">
+                                <div class="row">
+                                    <div class="col">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="radio" name="ticket_id" value="{{ $ticket->id }}"
+                                                id="flexRadioDefault{{ $ticket->id }}">
+                                            <label class="form-check-label" for="flexRadioDefault{{ $ticket->id }}">
+                                                <b>{{ $ticket->name }}</b>
+                                            </label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+                                <h3 id="price" class="text-danger">IDR {{ $ticket->price }}</h3>
+                                <p>{{ $ticket->description }}.</p>
+                            </div>
                         @endforeach
                         
                 </div>
@@ -44,7 +60,7 @@
 
                     <div class="mb-4">
                         <label for="email">Email :</label>
-                        <input type="text" name="email"
+                        <input type="email" name="email"
                             class="form-control rounded-top @error('email')is-invalid @enderror" id="email"
                             placeholder="nama@example.com" required>
                     </div>
@@ -101,4 +117,20 @@
         const today = new Date().toISOString().split('T')[0];
         document.getElementById('date_ticket').setAttribute('min', today);
     </script>
+
+<script>
+    // JavaScript untuk menambahkan logika seleksi pada kotak
+    function selectTicket(ticketId) {
+        // Uncheck semua radio button
+        document.querySelectorAll('.macam-tiket').forEach((div) => {
+            div.classList.remove('active');
+            div.querySelector('input[type="radio"]').checked = false;
+        });
+
+        // Tandai kotak terpilih
+        const selectedDiv = document.querySelector(`#flexRadioDefault${ticketId}`).closest('.macam-tiket');
+        selectedDiv.classList.add('active');
+        selectedDiv.querySelector('input[type="radio"]').checked = true;
+    }
+</script>
 @endsection()

@@ -11,7 +11,7 @@ class UpdateDataTicket extends Controller
 {
     public function index(){
         return view('dashboard.history-ticket.index',[
-            'transactions' => Transaction::all()
+            'transactions' => Transaction::orderBy('created_at', 'desc')->get()
         ]);
     }
 

@@ -24,8 +24,9 @@ class TicketController extends Controller
 
         $user_id = auth()->user()->id;
 
+        $external_id = 'TICKET-'.$request['ticket_id'] . '-' . $user_id . '-' . Str::slug($request['name_buyer'].'-' . Str::random(10));
         $xendit_payload = [
-            'external_id' => 'TICKET-'.$request['ticket_id'] . '-' . $user_id . '-' . Str::slug($request['name_buyer'].'-' . DateTime::createFromFormat('Y-m-d H:i:s', now())->format('Y-m-d H:i:s')),
+            'external_id' => $external_id,
             'amount' => $ticket->price * intval($request['qty']),
             'customer' => [
                 'given_names' => $request['name_buyer'],
@@ -45,9 +46,8 @@ class TicketController extends Controller
         Transaction::create([
             'user_id' => $user_id,
             'ticket_id' => $ticket->id,
-            'external_id' => $response['external_id'],
+            'external_id' => $external_id,
             'qty' => $request['qty'],
-            'external_id' => $response['external_id'],
             'name_buyer' => $request['name_buyer'],
             'email' => $request['email'],
             'phone_number' => $request['phone_number'],
@@ -57,6 +57,7 @@ class TicketController extends Controller
             'expired_date_transaction' => $response['expiry_date'],
             'data_payment_gateway' => json_encode($response),
             'date_ticket' => $request['date_ticket'],
+            'invoice_url' => $response['invoice_url'],
         ]);
 
         return Redirect::to($response['invoice_url']);

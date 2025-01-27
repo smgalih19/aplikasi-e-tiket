@@ -12,6 +12,7 @@ use App\Http\Controllers\DashboardAdminController;
 use App\Http\Controllers\DashboardUserController;
 use App\Http\Controllers\PrintController;
 use App\Http\Controllers\UpdateDataTicket;
+use App\Http\Controllers\WeebHookController;
 
 /*
 |--------------------------------------------------------------------------
@@ -45,12 +46,8 @@ Route::post('/register', [RegisterController::class, 'store']);
 
 // Dashboard Admin
 Route::get('/dashboard', [DashboardAdminController::class, 'index'])->middleware('auth');
-
 Route::resource('/dashboard/data-ticket', DashboardTiketController::class)->middleware('auth');
-
-
 Route::resource('/dashboard/history-ticket', UpdateDataTicket::class)->middleware('auth');
-
 
 Route::get('/dashboard/update-profile/password/edit', [UpdatePasswordController::class, 'edit']);
 Route::put('/dashboard/update-profile/password/edit', [UpdatePasswordController::class, 'update']);
@@ -66,9 +63,14 @@ Route::get('/dashboard-user', [DashboardUserController::class, 'index'])->middle
 
 Route::resource('/dashboard-user/data-user', DashboardUserTiketController::class)->middleware('auth');
 Route::get('/dashboard-user/data-order', [DashboardUserTiketController::class, 'order']);
+
 Route::get('/dashboard-user/update-profile-user/password/edit', [UpdatePasswordController::class, 'edituser']);
 Route::put('/dashboard-user/update-profile-user/password/edit', [UpdatePasswordController::class, 'updateuser']);
 
+// WeebHooks / ReverseAPI untuk berkomunikasi dan mengirimkan pemberitahuan secara real-time
+Route::post('/api-weebhooks', [WeebHookController::class, 'updateStatus'])->name('api.weebhooks');
+
+// Print / Cetak PDF Data Order Ticket
 Route::get('/download-pdf', [PrintController::class, 'print'])->name('download.pdf');
 
 // UpdateProfileUser
@@ -77,7 +79,7 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/dashboard-user/update-profile-user/{user}',[UpdateProfileController::class,'updateuser'])->name('profile.update');
 });
 
-// Transaction
+// Transaction Create Tiket
 Route::middleware(['auth'])->group(function () {
     Route::post('/transaction/create', [TicketController::class, 'store'])->name('transaction.create');
 });

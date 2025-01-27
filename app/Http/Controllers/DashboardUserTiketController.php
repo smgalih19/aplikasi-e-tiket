@@ -20,7 +20,8 @@ class DashboardUserTiketController extends Controller
     public function order()
     {
         return view('dashboard-user.data-order.index', [
-            "transactions" => Transaction::where('user_id', auth()->user()->id)->get()
+            "transactions" => Transaction::where('user_id', auth()->user()->id)
+                                        ->orderBy('created_at', 'desc')->get()
         ]);
     }
 

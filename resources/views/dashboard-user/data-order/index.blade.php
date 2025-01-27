@@ -29,7 +29,7 @@
                                 <tr>
                                     <td>{{ $count++ }}</td>
                                     <td>{{$ts->name_buyer}}</td>
-                                    <td>{{$ts->created_at}}</td>
+                                    <td>{{$ts->created_at->format('Y-m-d')}}</td>
                                     <td>{{$ts->date_ticket}}</td>
                                     <td>
                                         @if ($ts->status_transaction == "PAID")
@@ -66,6 +66,7 @@
                                                                 <p>Ticket: {{$ts->ticket->name}}</p>
                                                                 <p>Qty : {{$ts->qty}}</p>
                                                                 <p>Price :  {{$ts->amount}}</p>
+                                                                <p>Payment: <a target="_blank" href="{{ $ts->invoice_url }}">Invoice Url</a></p>
                                                             </div>
                                                             <div class="col-4">
                                                                 {!! DNS2D::getBarcodeSVG('Nama:' . $ts->name_buyer . '|Harga Ticket' . $ts->amount . '|Jumlah Ticket:' . $ts->qty, 'QRCODE', 5, 5, 'L') !!}
