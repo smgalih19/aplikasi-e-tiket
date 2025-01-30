@@ -69,7 +69,7 @@
                                                                 <p>Payment: <a target="_blank" href="{{ $ts->invoice_url }}">Invoice Url</a></p>
                                                             </div>
                                                             <div class="col-4">
-                                                                {!! DNS2D::getBarcodeSVG('Nama:' . $ts->name_buyer . '|Harga Ticket' . $ts->amount . '|Jumlah Ticket:' . $ts->qty, 'QRCODE', 5, 5, 'L') !!}
+                                                                {!! DNS2D::getBarcodeSVG('Nama:' . $ts->name_buyer . '|Harga Ticket' . $ts->amount . '|Jumlah Ticket:' . $ts->qty, 'QRCODE', 4, 4, 'L') !!}
                                                             </div>
                                                         </div>
                                                     </div>

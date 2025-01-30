@@ -8,13 +8,13 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" href="/">Home</a>
+                    <a class="nav-link {{ request()->is('/') ? 'active' : '' }}" href="/">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/viewtiket">Lihat Tiket</a>
+                    <a class="nav-link {{ request()->is('viewtiket') ? 'active' : '' }}" href="/viewtiket">Lihat Tiket</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/aboutus">Tentang Kami</a>
+                    <a class="nav-link {{ request()->is('aboutus') ? 'active' : '' }}" href="/aboutus">Tentang Kami</a>
                 </li>
             </ul>
 

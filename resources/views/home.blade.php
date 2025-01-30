@@ -1,7 +1,7 @@
 @extends('layouts.main')
 @section('container')
     <div class="container-fluid" style="padding: 0">
-        <img src="img/viewpantai.jpg" class="img-fluid" style="width: 1440px; height: 20%;">
+        <img src="img/viewpantai.jpg" class="img-fluid">
     </div>
 
         <div class="container">
